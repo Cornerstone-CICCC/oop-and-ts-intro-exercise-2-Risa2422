@@ -17,8 +17,12 @@ class Animal {
     return `The ${this.getType} makes a sound`;
   }
 
-  getType() {
-    return this.#type;
+  getType(type) {
+    if (type === "dog") {
+      return "dog";
+    } else {
+      return "cat";
+    }
   }
 
   speak() {
@@ -29,12 +33,8 @@ class Animal {
 class Dog extends Animal {
   // YOUR CODE HERE
 
-  get type() {
-    return "dog";
-  }
-
   speak() {
-    return `The ${this.type} barks`;
+    return `The ${this.getType("dog")} barks`;
   }
 }
 
@@ -45,7 +45,7 @@ class Cat extends Animal {
   }
 
   speak() {
-    return `The ${this.type} meows`;
+    return `The ${this.getType("cat")} meows`;
   }
 }
 
