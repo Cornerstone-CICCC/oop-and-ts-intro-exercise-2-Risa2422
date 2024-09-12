@@ -13,39 +13,33 @@ class Animal {
   }
 
   speak() {
-    // returns "The [type] makes a sound
-    return `The ${this.getType} makes a sound`;
-  }
-
-  getType(type) {
-    if (type === "dog") {
-      return "dog";
-    } else {
-      return "cat";
-    }
-  }
-
-  speak() {
     return `The ${this.getType()} makes a sound`;
+  }
+
+  getType() {
+    return this.#type;
   }
 }
 
 class Dog extends Animal {
   // YOUR CODE HERE
+  constructor() {
+    super("dog");
+  }
 
   speak() {
-    return `The ${this.getType("dog")} barks`;
+    return `The ${this.getType()} barks`;
   }
 }
 
 class Cat extends Animal {
   // YOUR CODE HERE
-  get type() {
-    return "cat";
+  constructor() {
+    super("cat");
   }
 
   speak() {
-    return `The ${this.getType("cat")} meows`;
+    return `The ${this.getType()} meows`;
   }
 }
 
